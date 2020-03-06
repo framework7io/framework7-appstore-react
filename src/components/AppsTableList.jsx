@@ -1,6 +1,8 @@
 import React from 'react';
 import { List, ListItem, Button } from 'framework7-react';
 
+import './AppsTableList.less';
+
 const AppsTableList = ({ apps }) => {
   return (
     <List className="apps-table-list" noChevron noHairlines>

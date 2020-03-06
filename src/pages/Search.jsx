@@ -10,7 +10,7 @@ const Search = () => {
   return (
     <Page>
       <Navbar large largeTransparent title="Search" />
-      <Block>Test</Block>
+      <Block>WIP</Block>
     </Page>
   );
 };

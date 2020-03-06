@@ -4,68 +4,59 @@ import {
   Page,
   Navbar,
   Block,
-  BlockTitle,
   Button,
   Link,
   List,
   ListItem,
 } from 'framework7-react';
 
-import { games, apps } from '../js/data';
+import { games } from '../js/data';
 
+import FeaturedApps from '../components/FeaturedApps';
 import AppsTableList from '../components/AppsTableList';
+import AppstoreBlockTitle from '../components/AppstoreBlockTitle';
 
 const Games = () => {
+  const featuredGames = games.filter((app) => !!app.featured);
   const playingNow = games;
-  const popular = games.sort((app1, app2) => app2.rating - app1.rating).slice(0, 12);
-  const newGames = games.sort((app1, app2) => new Date(app2.release_date).getTime() - new Date(app1.release_date).getTime()).slice(0, 12);
-  const topFree = [...popular];
+  const popularGames = [...games]
+    .sort((app1, app2) => app2.rating - app1.rating)
+    .slice(0, 13)
+    .slice(1);
+  const newGames = [...games]
+    .sort((app1, app2) => new Date(app2.release_date).getTime() - new Date(app1.release_date).getTime())
+    .slice(0, 12);
+  const topFreeGames = [...popularGames].reverse();
   const editorsChoice = games.slice(10);
-  
+
   return (
     <Page>
       <Navbar large largeTransparent title="Games" />
-      <Block className="top-slider">
-        {games.filter((app) => !!app.featured).map((app) => (
-          <div className="top-slide" key={app.id}>
-            <a href={`/app/${app.id}`}>
-              <div className="top-slide-headline">{app.featured}</div>
-              <div className="top-slide-title">{app.title}</div>
-              <div className="top-slide-subtitle">{app.subtitle}</div>
-              <div className="top-slide-image" style={{ backgroundImage: `url(${app.screenshots[0]})` }} />
-            </a>
-          </div>
-        ))}
-      </Block>
+      <FeaturedApps apps={featuredGames} />
 
-      <BlockTitle className="apps-block-title">
-        <span>What We're Playing Now</span>
+      <AppstoreBlockTitle title="What We're Playing Now">
         <Link>See All</Link>
-      </BlockTitle>
+      </AppstoreBlockTitle>
       <AppsTableList apps={playingNow} />
 
-      <BlockTitle className="apps-block-title">
-        <span>Popular Games</span>
+      <AppstoreBlockTitle title="Popular Games">
         <Link>See All</Link>
-      </BlockTitle>
-      <AppsTableList apps={popular} />
+      </AppstoreBlockTitle>
+      <AppsTableList apps={popularGames} />
 
-      <BlockTitle className="apps-block-title">
-        <span>New Games We Love</span>
+      <AppstoreBlockTitle title="New Games We Love">
         <Link>See All</Link>
-      </BlockTitle>
+      </AppstoreBlockTitle>
       <AppsTableList apps={newGames} />
 
-      <BlockTitle className="apps-block-title">
-        <span>Top Free Games</span>
+      <AppstoreBlockTitle title="Top Free Games">
         <Link>See All</Link>
-      </BlockTitle>
-      <AppsTableList apps={topFree} />
+      </AppstoreBlockTitle>
+      <AppsTableList apps={topFreeGames} />
 
-      <BlockTitle className="apps-block-title">
-        <span>Top Categories</span>
+      <AppstoreBlockTitle title="Top Categories">
         <Link>See All</Link>
-      </BlockTitle>
+      </AppstoreBlockTitle>
       <List className="categories-list" noChevron noHairlines>
         <ListItem
           title="Indie"
@@ -99,16 +90,14 @@ const Games = () => {
         </ListItem>
       </List>
 
-      <BlockTitle className="apps-block-title">
-        <span>Editors' Choice</span>
+      <AppstoreBlockTitle title="Editors' Choice">
         <Link>See All</Link>
-      </BlockTitle>
+      </AppstoreBlockTitle>
       <AppsTableList apps={editorsChoice} />
 
-      <BlockTitle className="apps-block-title">
-        <span>Quick Links</span>
+      <AppstoreBlockTitle title="Quick Links">
         <Link>See All</Link>
-      </BlockTitle>
+      </AppstoreBlockTitle>
       <List className="quick-links-list" noChevron noHairlines>
         <ListItem
           title="Try Apple Arcade"

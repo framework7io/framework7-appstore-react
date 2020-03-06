@@ -10,7 +10,7 @@ const Arcade = () => {
   return (
     <Page>
       <Navbar large largeTransparent title="Arcade" />
-      <Block>Test</Block>
+      <Block>WIP</Block>
     </Page>
   );
 };

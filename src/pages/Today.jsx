@@ -10,7 +10,7 @@ const Today = () => {
   return (
     <Page>
       <Navbar large largeTransparent title="Today" />
-      <Block>Test</Block>
+      <Block>WIP</Block>
     </Page>
   );
 };

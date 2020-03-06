@@ -26,5 +26,6 @@ module.exports = {
     "jsx-a11y/anchor-is-valid": "off",
     "react/no-unescaped-entities": "off",
     "react/prop-types": "off",
+    "max-len": "off",
   },
 };
