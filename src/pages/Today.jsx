@@ -9,7 +9,7 @@ import {
 const Today = () => {
   return (
     <Page>
-      <Navbar large transparent title="Today" />
+      <Navbar large largeTransparent title="Today" />
       <Block>Test</Block>
     </Page>
   );

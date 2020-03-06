@@ -17,7 +17,6 @@ const env = process.env.NODE_ENV || 'development';
 const target = process.env.TARGET || 'web';
 
 
-
 module.exports = {
   mode: env,
   entry: {
@@ -74,15 +73,14 @@ module.exports = {
       },
 
 
-
       {
         test: /\.css$/,
         use: [
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -94,8 +92,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -108,8 +106,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -122,8 +120,8 @@ module.exports = {
           (env === 'development' ? 'style-loader' : {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           }),
           'css-loader',
           'postcss-loader',
@@ -132,29 +130,24 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
-          limit: 10000,
           name: 'images/[name].[ext]',
-
+          esModule: false,
         },
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|m4a)(\?.*)?$/,
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
-          limit: 10000,
           name: 'media/[name].[ext]',
-
         },
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
-          limit: 10000,
           name: 'fonts/[name].[ext]',
-
         },
       },
     ],
@@ -188,7 +181,7 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
+        useShortDoctype: true,
       } : false,
     }),
     new MiniCssExtractPlugin({

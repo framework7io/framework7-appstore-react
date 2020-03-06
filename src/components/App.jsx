@@ -14,26 +14,27 @@ const AppComponent = () => {
   // Framework7 Parameters
   const f7params = {
     name: 'App Store', // App name
-    theme: 'auto', // Automatic theme detection
+    theme: 'ios', // ios theme
     // App routes
     routes,
+    autoDarkTheme: true,
   };
   if (process.env.NODE_ENV === 'production') {
     // Register service worker in production mode only
-    f7params.serviceWorker = {
-      path: '/service-worker.js',
-    };
+    // f7params.serviceWorker = {
+    //   path: '/service-worker.js',
+    // };
   }
   return (
     <App params={f7params}>
 
       <Views tabs className="safe-areas">
         <Toolbar tabbar labels bottom>
-          <Link tabLink="#view-today" tabLinkActive iconF7="house_fill" text="Today" />
-          <Link tabLink="#view-games" iconF7="square_list_fill" text="Games" />
-          <Link tabLink="#view-apps" iconF7="gear" text="Apps" />
-          <Link tabLink="#view-arcade" iconF7="gear" text="Arcade" />
-          <Link tabLink="#view-search" iconF7="gear" text="Search" />
+          <Link tabLink="#view-today" tabLinkActive iconF7="today" text="Today" />
+          <Link tabLink="#view-games" iconF7="rocket_fill" text="Games" />
+          <Link tabLink="#view-apps" iconF7="layers_alt_fill" text="Apps" />
+          <Link tabLink="#view-arcade" iconF7="gamecontroller_alt_fill" text="Arcade" />
+          <Link tabLink="#view-search" iconF7="search" text="Search" />
         </Toolbar>
 
         <View id="view-today" main tab tabActive url="/today/" />

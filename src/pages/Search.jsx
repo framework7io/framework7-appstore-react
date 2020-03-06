@@ -9,7 +9,7 @@ import {
 const Search = () => {
   return (
     <Page>
-      <Navbar large transparent title="Search" />
+      <Navbar large largeTransparent title="Search" />
       <Block>Test</Block>
     </Page>
   );

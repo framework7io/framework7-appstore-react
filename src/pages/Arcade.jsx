@@ -9,7 +9,7 @@ import {
 const Arcade = () => {
   return (
     <Page>
-      <Navbar large transparent title="Arcade" />
+      <Navbar large largeTransparent title="Arcade" />
       <Block>Test</Block>
     </Page>
   );

@@ -9,7 +9,7 @@ import {
 const Apps = () => {
   return (
     <Page>
-      <Navbar large transparent title="Apps" />
+      <Navbar large largeTransparent title="Apps" />
       <Block>Test</Block>
     </Page>
   );

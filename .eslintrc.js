@@ -22,6 +22,9 @@ module.exports = {
     'react',
   ],
   rules: {
-    "arrow-body-style": "off"
+    "arrow-body-style": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-unescaped-entities": "off",
+    "react/prop-types": "off",
   },
 };
