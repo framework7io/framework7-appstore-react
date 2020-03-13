@@ -27,5 +27,6 @@ module.exports = {
     "react/no-unescaped-entities": "off",
     "react/prop-types": "off",
     "max-len": "off",
+    "react/jsx-filename-extension": "off"
   },
 };

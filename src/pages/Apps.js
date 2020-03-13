@@ -10,49 +10,49 @@ import {
   ListItem,
 } from 'framework7-react';
 
-import { games } from '../js/data';
+import { apps } from '../js/data';
 
 import FeaturedApps from '../components/FeaturedApps';
 import AppsTableList from '../components/AppsTableList';
 import AppstoreBlockTitle from '../components/AppstoreBlockTitle';
 
 const Games = () => {
-  const featuredGames = games.filter((app) => !!app.featured);
-  const playingNow = games;
-  const popularGames = [...games]
+  const featuredApps = apps.filter((app) => !!app.featured);
+  const usingNow = apps;
+  const popularApps = [...apps]
     .sort((app1, app2) => app2.rating - app1.rating)
     .slice(0, 13)
     .slice(1);
-  const newGames = [...games]
+  const newApps = [...apps]
     .sort((app1, app2) => new Date(app2.release_date).getTime() - new Date(app1.release_date).getTime())
     .slice(0, 12);
-  const topFreeGames = [...popularGames].reverse();
-  const editorsChoice = games.slice(10);
+  const topFreeApps = [...popularApps].reverse();
+  const editorsChoice = apps.slice(10);
 
   return (
     <Page>
-      <Navbar large largeTransparent title="Games" />
-      <FeaturedApps apps={featuredGames} />
+      <Navbar large largeTransparent title="Apps" />
+      <FeaturedApps backText="Apps" apps={featuredApps} useIcon />
 
-      <AppstoreBlockTitle title="What We're Playing Now">
+      <AppstoreBlockTitle title="Using Now">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <AppsTableList apps={playingNow} />
+      <AppsTableList backText="Apps" apps={usingNow} />
 
-      <AppstoreBlockTitle title="Popular Games">
+      <AppstoreBlockTitle title="Popular Apps">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <AppsTableList apps={popularGames} />
+      <AppsTableList backText="Apps" apps={popularApps} />
 
-      <AppstoreBlockTitle title="New Games We Love">
+      <AppstoreBlockTitle title="New & Updated">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <AppsTableList apps={newGames} />
+      <AppsTableList backText="Apps" apps={newApps} />
 
-      <AppstoreBlockTitle title="Top Free Games">
+      <AppstoreBlockTitle title="Top Free Apps">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <AppsTableList apps={topFreeGames} />
+      <AppsTableList backText="Apps" apps={topFreeApps} />
 
       <AppstoreBlockTitle title="Top Categories">
         <Link>See All</Link>
@@ -93,7 +93,7 @@ const Games = () => {
       <AppstoreBlockTitle title="Editors' Choice">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <AppsTableList apps={editorsChoice} />
+      <AppsTableList backText="Apps" apps={editorsChoice} />
 
       <AppstoreBlockTitle title="Quick Links">
         <Link>See All</Link>

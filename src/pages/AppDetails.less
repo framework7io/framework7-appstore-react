@@ -1,0 +1,233 @@
+@import url("../css/_mixins.less");
+
+.app-header {
+  display: flex;
+  align-items: stretch;
+  margin-top: 0;
+  &-icon {
+    width: 118px;
+    height: 118px;
+    border-radius: 22%;
+    margin-right: var(--f7-block-padding-horizontal);
+    flex-shrink: 0;
+    @media (min-width: 768px) {
+      width: 191px;
+      height: 191px;
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-shrink: 10;
+    min-width: 0;
+  }
+  &-title {
+    font-size: 22px;
+    font-weight: 600;
+    @media (min-width: 768px) {
+      font-size: 27px;
+    }
+  }
+  &-subtitle {
+    font-size: 16px;
+    opacity: 0.55;
+    @media (min-width: 768px) {
+      font-size: 20px;
+    }
+  }
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    .button {
+      min-width: 72px;
+    }
+    @media (min-width: 768px) {
+      margin-bottom: auto;
+    }
+  }
+  &-rating {
+    display: flex;
+    opacity: 0.55;
+    align-items: center;
+    &-value {
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 4px;
+    }
+    .rating-stars .f7-icons {
+      font-size: 22px;
+    }
+  }
+  @media (max-width: 767px) {
+    margin-bottom: calc(var(--f7-block-margin-vertical) + 30px + 16px);
+    &-ratings {
+      margin-top: 16px;
+      margin-bottom: -46px;
+      margin-left: calc(-118px - var(--f7-block-padding-horizontal));
+    }
+  }
+}
+.app-screenshots {
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  display: flex;
+  scroll-padding-left: 16px;
+  &::-webkit-scrollbar {
+    display: none;
+    opacity: 0;
+  }
+  img {
+    max-width: 220px;
+    border-radius: 22px;
+    scroll-snap-align: start start;
+    margin-right: 10px;
+    @media (min-width: 768px) {
+      margin-right: 24px;
+    }
+  }
+  &:after {
+    content: '';
+    width: 1px;
+    height: 1px;
+    flex-shrink: 0;
+  }
+}
+.app-description {
+  font-size: 15px;
+  &-content {
+    position: relative;
+    padding-top: 16px;
+    .hairline(top, var(--f7-block-strong-border-color));
+  }
+  .link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    &.active-state {
+      opacity: 1;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 200%;
+      background-image: linear-gradient(to left, #fff 50%, rgba(255, 255, 255 ,0));
+      z-index: -1;
+      .theme-dark & {
+        background-image: linear-gradient(to left, #000 50%, rgba(0, 0, 0 ,0));
+      }
+    }
+  }
+  &-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-full &-text {
+    display: block;
+    animation: app-description-fade-in 600ms;
+  }
+  &-full .link {
+    display: none;
+  }
+}
+
+@keyframes app-description-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.app-ratings {
+  display: flex;
+  margin-bottom: 0;
+  &-number {
+    line-height: 1;
+    text-align: center;
+    font-weight: bold;
+    flex-shrink: 0;
+    b, span {
+      display: block;
+    }
+    b {
+      font-size: 60px;
+      font-weight: 800;
+    }
+    span {
+      font-size: 15px;
+      opacity: 0.55;
+    }
+  }
+  &-votes {
+    width: 100%;
+    flex-shrink: 10;
+    line-height: 10px;
+    margin-top: 6px;
+    i {
+      font-size: 8px;
+      opacity: 0.55;
+    }
+    &-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    &-progress {
+      width: 70%;
+      height: 2px;
+      background: rgba(0,0,0,0.17);
+      border-radius: 2px;
+      margin-left: 10px;
+      span {
+        background: rgba(0,0,0,0.55);
+        display: block;
+        height: 2px;
+        border-radius: 2px;
+      }
+      .theme-dark & {
+        background: rgba(255,255,255,0.17);
+        span {
+          background: rgba(255,255,255,0.55);
+        }
+      }
+    }
+    &-total {
+      text-align: right;
+      opacity: 0.55;
+      margin-top: 4px;
+    }
+  }
+}
+.app-reviews {
+  margin-top: 0;
+  .app-review {
+    border-radius: 10px;
+    background: var(--f7-block-strong-bg-color);
+    padding: 16px;
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      span:last-child {
+        opacity: 0.55;
+      }
+      .rating-stars .f7-icons {
+        font-size: 12px;
+        color: var(--f7-color-orange);
+      }
+    }
+    &-text {
+      margin-top: 16px;
+    }
+  }
+}

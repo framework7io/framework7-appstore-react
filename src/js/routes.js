@@ -6,6 +6,8 @@ import Arcade from '../pages/Arcade';
 import Search from '../pages/Search';
 import NotFound from '../pages/404';
 
+import AppDetails from '../pages/AppDetails';
+
 const routes = [
   {
     path: '/today/',
@@ -26,6 +28,10 @@ const routes = [
   {
     path: '/search/',
     component: Search,
+  },
+  {
+    path: '/app/:id',
+    component: AppDetails,
   },
   {
     path: '(.*)',
