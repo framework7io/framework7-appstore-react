@@ -35,17 +35,17 @@
       {
         "version": "1.0.3",
         "release_date": "2020-03-02 00:00:00 UTC",
-        "release_notes": {}
+        "release_notes": null
       },
       {
         "version": "1.0.4",
         "release_date": "2020-03-03 00:00:00 UTC",
-        "release_notes": {}
+        "release_notes": null
       },
       {
         "version": "1.0.5",
         "release_date": "2020-03-06 00:00:00 UTC",
-        "release_notes": {}
+        "release_notes": null
       }
     ]
   },
@@ -609,7 +609,7 @@
       {
         "version": "1.0.3",
         "release_date": "2020-03-04 00:00:00 UTC",
-        "release_notes": {}
+        "release_notes": null
       }
     ]
   },
@@ -820,7 +820,7 @@
       {
         "version": "1.9",
         "release_date": "2020-03-05 00:00:00 UTC",
-        "release_notes": {}
+        "release_notes": null
       }
     ]
   },
@@ -926,7 +926,7 @@
       {
         "version": "1.0.8",
         "release_date": "2020-03-05 00:00:00 UTC",
-        "release_notes": {}
+        "release_notes": null
       }
     ]
   },

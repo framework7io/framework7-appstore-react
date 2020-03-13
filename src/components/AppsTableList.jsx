@@ -14,7 +14,7 @@ const AppsTableList = ({ apps, backText }) => {
         >
           <div className="apps-table-list-title" slot="title">{app.title}</div>
           <div className="apps-table-list-subtitle item-text" slot="title">{app.subtitle}</div>
-          <div className="apps-table-list-image" slot="media" style={{ backgroundImage: `url(${app.icon})` }} />
+          <img className="apps-table-list-image" slot="media" src={app.icon} alt={app.title} />
           <div className="apps-table-list-button" slot="inner">
             <Button className="prevent-active-state-propagation" type="button" round>Get</Button>
             <span>In-App Purchases</span>

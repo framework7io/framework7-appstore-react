@@ -1,5 +1,23 @@
 @import url("../css/_mixins.less");
-
+.app-navbar {
+  &-icon {
+    img {
+      width: 28px;
+      height: 28px;
+      border-radius: 22%;
+    }
+  }
+  &-button {
+    transition: 200ms;
+    opacity: 0;
+    .button {
+      min-width: 72px;
+    }
+  }
+  &.navbar-transparent-visible .app-navbar-button {
+    opacity: 1;
+  }
+}
 .app-header {
   display: flex;
   align-items: stretch;
@@ -162,6 +180,7 @@
     }
     b {
       font-size: 60px;
+      letter-spacing: -0.05em;
       font-weight: 800;
     }
     span {
@@ -210,11 +229,38 @@
   }
 }
 .app-reviews {
-  margin-top: 0;
+  margin-top: 16px;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  display: flex;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+    opacity: 0;
+  }
+  @media (min-width: 768px) {
+    scroll-padding-left: 16px;
+  }
+  &:after {
+    content: '';
+    flex-shrink: 0;
+    width: 1px;
+    height: 1px;
+  }
   .app-review {
     border-radius: 10px;
     background: var(--f7-block-strong-bg-color);
     padding: 16px;
+    scroll-snap-align: center center;
+    width: 100%;
+    max-width: 350px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    @media (min-width: 768px) {
+      margin-right: 24px;
+      scroll-snap-align: start start;
+    }
     &-header {
       display: flex;
       justify-content: space-between;
@@ -229,5 +275,18 @@
     &-text {
       margin-top: 16px;
     }
+  }
+}
+.app-information-list {
+  --f7-list-bg-color: transparent;
+  --f7-list-item-title-text-color: rgba(0,0,0,0.55);
+  --f7-list-item-after-text-color: #000;
+  .theme-dark & {
+    --f7-list-item-after-text-color: #fff;
+    --f7-list-item-title-text-color: rgba(255,255,255,0.55);
+  }
+  .item-link {
+    --f7-list-item-title-text-color: var(--f7-theme-color);
+    --f7-list-item-after-text-color: var(--f7-theme-color);
   }
 }
