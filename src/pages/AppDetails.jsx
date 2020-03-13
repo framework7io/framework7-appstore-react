@@ -236,10 +236,10 @@ const AppDetails = ({ id, backText }) => {
         <ListItem title="Age Rating" after="12+" />
         <ListItem title="In-App Purchases" after="Yes" />
         <ListItem title="Copyright" after={`© ${app.developer.name}`} />
-        <ListItem link={`https://apps.apple.com/developer/id${app.developer.id}`} target="_blank" title="Developer Website">
+        <ListItem link={`https://apps.apple.com/developer/id${app.developer.id}`} external target="_blank" title="Developer Website">
           <Icon slot="after" f7="compass" />
         </ListItem>
-        <ListItem link={`https://apps.apple.com/developer/id${app.developer.id}`} target="_blank" title="Privacy Policy">
+        <ListItem link={`https://apps.apple.com/developer/id${app.developer.id}`} external target="_blank" title="Privacy Policy">
           <Icon slot="after" f7="hand_raised_fill" />
         </ListItem>
       </List>
