@@ -14,8 +14,10 @@ import {
   List,
   ListItem,
 } from 'framework7-react';
+
 import RatingStars from '../components/RatingStars';
 import AppstoreBlockTitle from '../components/AppstoreBlockTitle';
+
 import { apps, games } from '../js/data';
 
 import './AppDetails.less';
@@ -95,7 +97,7 @@ const AppDetails = ({ id, backText }) => {
         </div>
       </div>
       <div className="block app-screenshots">
-        {app.screenshots.map((screenshot, index) => (
+        {app.screenshotsThumbs.map((screenshot, index) => (
           <img
             onClick={() => openPhotoBrowser(index)}
             src={screenshot}
