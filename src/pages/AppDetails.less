@@ -103,6 +103,10 @@
     border-radius: 22px;
     scroll-snap-align: start start;
     margin-right: 10px;
+    background-color: #f1f1f1;
+    .theme-dark & {
+      background-color: #111;
+    }
     @media (min-width: 768px) {
       margin-right: 24px;
     }
@@ -258,6 +262,9 @@
     margin-right: 10px;
     flex-shrink: 0;
     box-sizing: border-box;
+    html:not(.theme-dark) & {
+      background-color: #F2F2F6;
+    }
     @media (min-width: 768px) {
       margin-right: 24px;
       scroll-snap-align: start start;

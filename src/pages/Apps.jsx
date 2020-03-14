@@ -1,8 +1,6 @@
 import React from 'react';
 
 import {
-  Page,
-  Navbar,
   Block,
   Button,
   Link,
@@ -12,6 +10,7 @@ import {
 
 import { apps } from '../js/data';
 
+import AppstorePage from '../components/AppstorePage';
 import FeaturedApps from '../components/FeaturedApps';
 import AppsTableList from '../components/AppsTableList';
 import AppstoreBlockTitle from '../components/AppstoreBlockTitle';
@@ -30,8 +29,7 @@ const Games = () => {
   const editorsChoice = apps.slice(10);
 
   return (
-    <Page>
-      <Navbar large largeTransparent title="Apps" />
+    <AppstorePage title="Apps">
       <FeaturedApps backText="Apps" apps={featuredApps} useIcon />
 
       <AppstoreBlockTitle title="Using Now">
@@ -126,7 +124,7 @@ const Games = () => {
         <Button large>Send Gift</Button>
         <Button large>Add Funds to Apple ID</Button>
       </Block>
-    </Page>
+    </AppstorePage>
   );
 };
 

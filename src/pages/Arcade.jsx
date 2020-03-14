@@ -1,17 +1,16 @@
 import React from 'react';
 
 import {
-  Page,
-  Navbar,
   Block,
 } from 'framework7-react';
 
+import AppstorePage from '../components/AppstorePage';
+
 const Arcade = () => {
   return (
-    <Page>
-      <Navbar large largeTransparent title="Arcade" />
+    <AppstorePage title="Arcade">
       <Block>WIP</Block>
-    </Page>
+    </AppstorePage>
   );
 };
 

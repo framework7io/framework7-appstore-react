@@ -1,17 +1,16 @@
 import React from 'react';
 
 import {
-  Page,
-  Navbar,
   Block,
 } from 'framework7-react';
 
+import AppstorePage from '../components/AppstorePage';
+
 const Search = () => {
   return (
-    <Page>
-      <Navbar large largeTransparent title="Search" />
+    <AppstorePage title="Search">
       <Block>WIP</Block>
-    </Page>
+    </AppstorePage>
   );
 };
 

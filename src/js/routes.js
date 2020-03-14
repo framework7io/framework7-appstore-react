@@ -24,6 +24,12 @@ const routes = [
     asyncComponent: () => import('../pages/AppDetails'),
   },
   {
+    path: '/account/',
+    popup: {
+      asyncComponent: () => import('../pages/Account'),
+    },
+  },
+  {
     path: '(.*)',
     asyncComponent: () => import('../pages/404'),
   },
