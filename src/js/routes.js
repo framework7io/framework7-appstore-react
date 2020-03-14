@@ -1,37 +1,37 @@
 const routes = [
   {
     path: '/today/',
-    asyncComponent: () => import('../pages/Today'),
+    asyncComponent: () => import(/* webpackChunkName: "today" */ '../pages/Today'),
   },
   {
     path: '/games/',
-    asyncComponent: () => import('../pages/Games'),
+    asyncComponent: () => import(/* webpackChunkName: "games" */ '../pages/Games'),
   },
   {
     path: '/apps/',
-    asyncComponent: () => import('../pages/Apps'),
+    asyncComponent: () => import(/* webpackChunkName: "apps" */ '../pages/Apps'),
   },
   {
     path: '/arcade/',
-    asyncComponent: () => import('../pages/Arcade'),
+    asyncComponent: () => import(/* webpackChunkName: "arcade" */ '../pages/Arcade'),
   },
   {
     path: '/search/',
-    asyncComponent: () => import('../pages/Search'),
+    asyncComponent: () => import(/* webpackChunkName: "search" */ '../pages/Search'),
   },
   {
     path: '/app/:id',
-    asyncComponent: () => import('../pages/AppDetails'),
+    asyncComponent: () => import(/* webpackChunkName: "app-details" */ '../pages/AppDetails'),
   },
   {
     path: '/account/',
     popup: {
-      asyncComponent: () => import('../pages/Account'),
+      asyncComponent: () => import(/* webpackChunkName: "account" */ '../pages/Account'),
     },
   },
   {
     path: '(.*)',
-    asyncComponent: () => import('../pages/404'),
+    asyncComponent: () => import(/* webpackChunkName: "404" */ '../pages/404'),
   },
 ];
 
