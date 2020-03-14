@@ -5,7 +5,7 @@
   "lang": "en-US",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#EE350F",
+  "background_color": "#000000",
   "theme_color": "#EE350F",
   "icons": [
     {
