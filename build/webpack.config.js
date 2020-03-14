@@ -24,8 +24,9 @@ module.exports = {
   },
   output: {
     path: resolvePath('www'),
-    filename: 'js/[name].js',
-    chunkFilename: 'js/[name].js',
+    hashDigestLength: 6,
+    filename: 'js/[name].[hash].js',
+    chunkFilename: 'js/[name].[chunkhash].js',
     publicPath: '',
     hotUpdateChunkFilename: 'hot/hot-update.js',
     hotUpdateMainFilename: 'hot/hot-update.json',
@@ -133,7 +134,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: 'images/[name].[ext]',
+          name: 'images/[name].[hash:6].[ext]',
           esModule: false,
         },
       },
@@ -141,14 +142,14 @@ module.exports = {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|m4a)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: 'media/[name].[ext]',
+          name: 'media/[name].[hash:6].[ext]',
         },
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: 'fonts/[name].[ext]',
+          name: 'fonts/[name].[hash:6].[ext]',
         },
       },
     ],
@@ -186,7 +187,8 @@ module.exports = {
       } : false,
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
+      filename: 'css/[name].[hash].css',
+      chunkFilename: 'css/[name].[chunkhash].css',
     }),
     new CopyWebpackPlugin([
       {
