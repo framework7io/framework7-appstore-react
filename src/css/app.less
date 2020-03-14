@@ -3,6 +3,10 @@
 
 :root {
   --f7-tabbar-label-font-size: 10px;
+  --f7-navbar-tablet-height: 50px;
+  @media (min-width: 768px) and (min-height: 600px) {
+    --f7-tabbar-label-font-size: 14px;
+  }
 }
 html:not(.theme-dark) .views {
   --f7-page-bg-color: #fff;
@@ -19,6 +23,13 @@ html.theme-dark {
     --f7-list-item-border-color: rgba(255, 255, 255, 0.2);
   }
 }
+@media (min-width: 1024px) and (min-height: 600px) {
+  .framework7-root .views {
+    --f7-safe-area-left: 44px;
+    --f7-safe-area-right: 44px;
+  }
+}
+
 
 .categories-list,
 .quick-links-list {

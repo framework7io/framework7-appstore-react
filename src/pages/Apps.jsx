@@ -26,7 +26,7 @@ const Games = () => {
     .sort((app1, app2) => new Date(app2.release_date).getTime() - new Date(app1.release_date).getTime())
     .slice(0, 12);
   const topFreeApps = [...popularApps].reverse();
-  const editorsChoice = apps.slice(10);
+  const editorsChoice = apps.slice(5);
 
   return (
     <AppstorePage title="Apps">

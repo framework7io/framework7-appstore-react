@@ -7,12 +7,12 @@ const AppstorePage = ({ title, children }) => {
   return (
     <Page className="appstore-page">
       <Navbar className="appstore-page-large-navbar" large transparent title={title} />
-      <div className="appstore-page-title">
+      <h1 className="appstore-page-title">
         <span>{title}</span>
         <Link href="/account/">
           <img src={avatarSrc} alt="Account" />
         </Link>
-      </div>
+      </h1>
       {children}
     </Page>
   );
