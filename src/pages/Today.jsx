@@ -14,7 +14,6 @@ import arcadeCardImageSrc from '../assets/arcade.jpg';
 
 import { apps, games } from '../js/data';
 
-
 const Today = () => {
   const weekDay = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'long', weekday: 'long' }).format(new Date());
 
