@@ -55,7 +55,7 @@ const Games = () => {
       <AppstoreBlockTitle title="Top Categories">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <List className="categories-list" noChevron noHairlines>
+      <List className="categories-list safe-areas-inset" noChevron noHairlines>
         <ListItem
           title="Indie"
           link="#"
@@ -96,7 +96,7 @@ const Games = () => {
       <AppstoreBlockTitle title="Quick Links">
         <Link>See All</Link>
       </AppstoreBlockTitle>
-      <List className="quick-links-list" noChevron noHairlines>
+      <List className="quick-links-list safe-areas-inset" noChevron noHairlines>
         <ListItem
           title="Try Apple Arcade"
           link="#"

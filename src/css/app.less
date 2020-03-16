@@ -86,3 +86,12 @@ html.theme-dark .framework7-root > .views::after {
 html.theme-dark.with-modal-popup-push .framework7-root > .views:after {
   opacity: 1;
 }
+
+.list.safe-areas-inset {
+  padding-left: var(--f7-safe-area-left);
+  padding-right: var(--f7-safe-area-left);
+  > ul {
+    --f7-safe-area-left: 0px;
+    --f7-safe-area-right: 0px;
+  }
+}

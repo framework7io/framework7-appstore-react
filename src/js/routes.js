@@ -1,23 +1,29 @@
+import Today from '../pages/Today';
+import Games from '../pages/Games';
+import Apps from '../pages/Apps';
+import Arcade from '../pages/Arcade';
+import Search from '../pages/Search';
+
 const routes = [
   {
     path: '/today/',
-    asyncComponent: () => import(/* webpackChunkName: "today" */ '../pages/Today'),
+    component: Today,
   },
   {
     path: '/games/',
-    asyncComponent: () => import(/* webpackChunkName: "games" */ '../pages/Games'),
+    component: Games,
   },
   {
     path: '/apps/',
-    asyncComponent: () => import(/* webpackChunkName: "apps" */ '../pages/Apps'),
+    component: Apps,
   },
   {
     path: '/arcade/',
-    asyncComponent: () => import(/* webpackChunkName: "arcade" */ '../pages/Arcade'),
+    component: Arcade,
   },
   {
     path: '/search/',
-    asyncComponent: () => import(/* webpackChunkName: "search" */ '../pages/Search'),
+    component: Search,
   },
   {
     path: '/app/:id',

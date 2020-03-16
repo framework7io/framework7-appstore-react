@@ -231,7 +231,7 @@ const AppDetails = ({ id, backText }) => {
         </>
       )}
       <AppstoreBlockTitle title="Information" />
-      <List noHairlines noChevron className="app-information-list">
+      <List noHairlines noChevron className="safe-areas-inset app-information-list">
         <ListItem title="Provider" after={app.developer.name} />
         <ListItem title="Size" after={`${Math.floor(app.size / 1000000)} MB`} />
         <ListItem title="Compatibility" after="Works on this iPhone" />
