@@ -9,7 +9,7 @@ import AppstorePage from '../components/AppstorePage';
 const Search = () => {
   return (
     <AppstorePage title="Search">
-      <Block>WIP</Block>
+      <Block>Work in progress</Block>
     </AppstorePage>
   );
 };

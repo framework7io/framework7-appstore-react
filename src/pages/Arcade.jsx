@@ -9,7 +9,7 @@ import AppstorePage from '../components/AppstorePage';
 const Arcade = () => {
   return (
     <AppstorePage title="Arcade">
-      <Block>WIP</Block>
+      <Block>Work in progress</Block>
     </AppstorePage>
   );
 };

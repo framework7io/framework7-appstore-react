@@ -57,34 +57,40 @@ const Games = () => {
       </AppstoreBlockTitle>
       <List className="categories-list safe-areas-inset" noChevron noHairlines>
         <ListItem
-          title="Indie"
+          title="Apple Watch Apps"
           link="#"
         >
-          <span role="img" slot="media" aria-label="Indie">💎</span>
+          <span role="img" slot="media" aria-label="Apple Watch Apps">⌚</span>
         </ListItem>
         <ListItem
-          title="Casual"
+          title="Photo & Video"
           link="#"
         >
-          <span role="img" slot="media" aria-label="Casual">👾</span>
+          <span role="img" slot="media" aria-label="Photo & Video">📷</span>
         </ListItem>
         <ListItem
-          title="Strategy"
+          title="Entertaiment"
           link="#"
         >
-          <span role="img" slot="media" aria-label="Strategy">🏰</span>
+          <span role="img" slot="media" aria-label="Entertaiment">🍿</span>
         </ListItem>
         <ListItem
-          title="Action"
+          title="Kids"
           link="#"
         >
-          <span role="img" slot="media" aria-label="Action">⚔️</span>
+          <span role="img" slot="media" aria-label="Kids">🎈</span>
         </ListItem>
         <ListItem
-          title="Racing"
+          title="Social Networking"
           link="#"
         >
-          <span role="img" slot="media" aria-label="Racing">🏁</span>
+          <span role="img" slot="media" aria-label="Social Networking">💬</span>
+        </ListItem>
+        <ListItem
+          title="Lifestyle"
+          link="#"
+        >
+          <span role="img" slot="media" aria-label="Lifestyle">🛋️</span>
         </ListItem>
       </List>
 
@@ -97,10 +103,6 @@ const Games = () => {
         <Link>See All</Link>
       </AppstoreBlockTitle>
       <List className="quick-links-list safe-areas-inset" noChevron noHairlines>
-        <ListItem
-          title="Try Apple Arcade"
-          link="#"
-        />
         <ListItem
           title="About In-App Purchases"
           link="#"

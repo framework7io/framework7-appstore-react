@@ -3,6 +3,13 @@
     opacity: 0;
     pointer-events: none;
   }
+  &.appstore-page-no-collapsed-navbar {
+    --f7-navbar-height: 0px;
+    --f7-navbar-large-title-height: 96px;
+    .title {
+      display: none;
+    }
+  }
 }
 .appstore-page-title {
   margin: 0;
@@ -22,6 +29,7 @@
   padding-bottom: var(--f7-navbar-large-title-padding-vertical);
   box-sizing: border-box;
   margin-top: calc(-1 * var(--f7-navbar-large-title-height));
+  position: relative;
   img {
     width: 36px;
     height: 36px;
@@ -32,5 +40,17 @@
   .page-transitioning & > span {
     opacity: 0;
     pointer-events: none;
+  }
+  .appstore-page-no-collapsed-navbar & {
+    --f7-navbar-height: 0px;
+  }
+  &-heading {
+    position: absolute;
+    opacity: 0.55;
+    font-weight: 600;
+    font-size: 13px;
+    bottom: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0;
   }
 }
