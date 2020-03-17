@@ -41,6 +41,7 @@ module.exports = {
   },
   devtool: env === 'production' ? 'source-map' : 'eval',
   devServer: {
+    host: '0.0.0.0',
     hot: true,
     open: true,
     compress: true,
