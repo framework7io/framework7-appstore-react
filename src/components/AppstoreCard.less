@@ -1,5 +1,5 @@
 .appstore-card-grid {
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (min-height: 670px) {
     --card-grid-gap: 30px;
     --cards-per-row: 2;
     display: grid;
@@ -27,6 +27,7 @@
 }
 .appstore-card {
   height: 410px;
+  max-height: 100vh;
   --f7-card-content-padding-horizontal: 20px;
   --f7-card-content-padding-vertical: 30px;
   --f7-card-expandable-font-size: 20px;
@@ -34,13 +35,12 @@
   --f7-card-expandable-max-width: none;
   --f7-card-expandable-tablet-height: 92vh;
   --f7-card-expandable-tablet-border-radius: 13px;
-
   --card-offset: 40px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 767px), (max-height: 669px) {
     margin-top: 0;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 768px) and (min-height: 670px) {
     --card-width: calc((100vw - var(--f7-safe-area-left) - var(--f7-safe-area-right) - var(--f7-card-expandable-margin-horizontal) * 2 - var(--card-grid-gap) * (var(--cards-per-row) - 1)) / var(--cards-per-row));
     --card-offset: calc(670px - var(--card-width));
     .card-content {
@@ -53,8 +53,25 @@
     --f7-card-expandable-box-shadow: none;
   }
 
+  &.card-opening,
+  &.card-closing,
+  &.card-transitioning {
+    transition-duration: 400ms;
+  }
+  &.card-opening {
+    .card-content {
+      transition-duration: 350ms;
+    }
+  }
+  &.card-closing {
+    .card-content {
+      transition-duration: 450ms;
+    }
+  }
+
   &-header {
     height: 410px;
+    max-height: 100vh;
     position: relative;
 
     box-sizing: border-box;
@@ -72,15 +89,14 @@
       object-fit: cover;
       object-position: center;
       z-index: -1;
-      background-color: #777;
+      background-color: #ccc;
       transform: translateX(calc(-1 * var(--card-offset) / 2));
-      transition-duration: 400ms;
     }
     &-text {
       padding: 16px var(--f7-card-content-padding-horizontal);
       width: 100%;
       box-sizing: border-box;
-      transition-duration: 400ms;
+      transform: translate3d(0,0,0);
     }
     &-text-top &-text{
       margin-bottom: auto;
@@ -99,7 +115,6 @@
       --f7-list-item-padding-vertical: 0px;
       &-button {
         transform: translateX(calc(-1 * var(--card-offset)));
-        transition-duration: 400ms;
       }
       .button {
         --f7-button-bg-color: #fff;
@@ -132,9 +147,17 @@
       transform: translateX(0);
     }
   }
+  &.card-opening,
+  &.card-closing {
+    .appstore-card-header .apps-table-list-button,
+    .appstore-card-header > img,
+    .appstore-card-header-text {
+      transition-duration: 400ms;
+    }
+  }
 
-  &.card-opened .appstore-card-header.text-top .appstore-card-header-text,
-  &.card-opening .appstore-card-header.text-top .appstore-card-header-text {
+  &.card-opened .appstore-card-header-text-top .appstore-card-header-text,
+  &.card-opening .appstore-card-header-text-top .appstore-card-header-text {
     transform: translateY(var(--f7-safe-area-top));
   }
   &-subtitle {

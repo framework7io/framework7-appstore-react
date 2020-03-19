@@ -27,12 +27,12 @@ const routes = [
   },
   {
     path: '/app/:id',
-    asyncComponent: () => import(/* webpackChunkName: "app-details" *//* webpackPrefetch: true */ '../pages/AppDetails'),
+    asyncComponent: () => import(/* webpackChunkName: "app-details" *//* webpackPreload: true */ '../pages/AppDetails'),
   },
   {
     path: '/account/',
     popup: {
-      asyncComponent: () => import(/* webpackChunkName: "account" *//* webpackPrefetch: true */ '../pages/Account'),
+      asyncComponent: () => import(/* webpackChunkName: "account" *//* webpackPreload: true */ '../pages/Account'),
     },
   },
   {
