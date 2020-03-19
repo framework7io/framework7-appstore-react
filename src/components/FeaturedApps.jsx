@@ -12,7 +12,7 @@ const FeaturedApps = ({ apps, useIcon, backText }) => {
             <div className="featured-app-headline">{app.featured}</div>
             <div className="featured-app-title">{app.title}</div>
             <div className="featured-app-subtitle">{app.subtitle}</div>
-            <img className="featured-app-image" alt={app.title} src={useIcon ? app.icon : app.screenshots[0]} />
+            <img loading="lazy" className="featured-app-image" alt={app.title} src={useIcon ? app.icon : app.screenshots[0]} />
           </Link>
         </div>
       ))}

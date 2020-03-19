@@ -1,0 +1,166 @@
+.appstore-card-grid {
+  @media (min-width: 768px) {
+    --card-grid-gap: 30px;
+    --cards-per-row: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--card-grid-gap);
+    row-gap: var(--card-grid-gap);
+    margin-left: calc(var(--f7-card-expandable-margin-horizontal) + var(--f7-safe-area-left));
+    margin-right: calc(var(--f7-card-expandable-margin-horizontal) + var(--f7-safe-area-right));
+    margin-top: var(--f7-card-expandable-margin-vertical);
+    .appstore-card {
+      margin: 0;
+      // max-width: none;
+      width: 100%;
+    }
+  }
+  @media (min-width: 1024px) {
+    --card-grid-gap: 50px;
+  }
+  @media (min-width: 1500px) {
+    --card-grid-gap: 50px;
+    --cards-per-row: 3;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+.appstore-card {
+  height: 410px;
+  --f7-card-content-padding-horizontal: 20px;
+  --f7-card-content-padding-vertical: 30px;
+  --f7-card-expandable-font-size: 20px;
+  --f7-card-expandable-font-weight: 500;
+  --f7-card-expandable-max-width: none;
+  --f7-card-expandable-tablet-height: 92vh;
+  --f7-card-expandable-tablet-border-radius: 13px;
+
+  --card-offset: 40px;
+
+  @media (max-width: 767px) {
+    margin-top: 0;
+  }
+  @media (min-width: 768px) {
+    --card-width: calc((100vw - var(--f7-safe-area-left) - var(--f7-safe-area-right) - var(--f7-card-expandable-margin-horizontal) * 2 - var(--card-grid-gap) * (var(--cards-per-row) - 1)) / var(--cards-per-row));
+    --card-offset: calc(670px - var(--card-width));
+    .card-content {
+      --f7-safe-area-left: 0px;
+      --f7-safe-area-right: 0px;
+      --f7-card-content-padding-horizontal: 35px;
+    }
+  }
+  .theme-dark & {
+    --f7-card-expandable-box-shadow: none;
+  }
+
+  &-header {
+    height: 410px;
+    position: relative;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    > img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: -1;
+      background-color: #777;
+      transform: translateX(calc(-1 * var(--card-offset) / 2));
+      transition-duration: 400ms;
+    }
+    &-text {
+      padding: 16px var(--f7-card-content-padding-horizontal);
+      width: 100%;
+      box-sizing: border-box;
+      transition-duration: 400ms;
+    }
+    &-text-top &-text{
+      margin-bottom: auto;
+    }
+    .apps-table-list {
+      padding: 16px var(--f7-card-content-padding-horizontal);
+      display: block;
+      backdrop-filter: blur(30px) saturate(210%);
+      margin-top: 0;
+      width: 100%;
+      box-sizing: border-box;
+      color: #fff;
+      position: relative;
+      z-index: 10;
+      --f7-list-item-text-text-color: rgba(255, 255, 255, 0.55);
+      --f7-list-item-padding-vertical: 0px;
+      &-button {
+        transform: translateX(calc(-1 * var(--card-offset)));
+        transition-duration: 400ms;
+      }
+      .button {
+        --f7-button-bg-color: #fff;
+      }
+      ul {
+        padding: 0;
+        display: block;
+        height: unset;
+        flex-shrink: 0;
+        max-width: none;
+        &:after {
+          display: none !important;
+        }
+      }
+      li {
+        max-width: none;
+        width: auto;
+        padding: 0;
+        margin: 0;
+      }
+      &-image {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+  &.card-opened, &.card-opening {
+    .appstore-card-header .apps-table-list-button,
+    .appstore-card-header > img {
+      transform: translateX(0);
+    }
+  }
+
+  &.card-opened .appstore-card-header.text-top .appstore-card-header-text,
+  &.card-opening .appstore-card-header.text-top .appstore-card-header-text {
+    transform: translateY(var(--f7-safe-area-top));
+  }
+  &-subtitle {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.55;
+  }
+  &-title {
+    font-size: 28px;
+    font-weight: bold;
+    max-width: 80%;
+    line-height: 1.2;
+  }
+
+  &-content {
+    color: rgba(0, 0, 0, 0.55);
+    font-weight: 500;
+    b, strong, em, h1, h2, h3, h4 {
+      color: #000;
+    }
+    .theme-dark & {
+      color: rgba(240, 240, 255, 0.55);
+      b, strong, em, h1, h2, h3, h4 {
+        color: #fff;
+      }
+    }
+  }
+}
