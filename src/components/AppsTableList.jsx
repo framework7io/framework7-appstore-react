@@ -3,9 +3,9 @@ import { List, ListItem, Button } from 'framework7-react';
 
 import './AppsTableList.less';
 
-const AppsTableList = ({ apps, backText }) => {
+const AppsTableList = ({ apps, backText, style }) => {
   return (
-    <List className="apps-table-list" noChevron noHairlines>
+    <List className="apps-table-list" noChevron noHairlines style={ style }>
       {apps.map((app) => (
         <ListItem
           link={`/app/${app.id}`}

@@ -13,6 +13,8 @@ const AppstoreCard = ({
   titleLarge = false,
   titlePosition = 'top',
   app,
+  appBackgroundColor = 'transparent',
+  closeButtonColor = '#fff',
   children,
 }) => {
   const titleStyle = {
@@ -35,8 +37,13 @@ const AppstoreCard = ({
             <div className="appstore-card-title" style={titleStyle}>{title}</div>
           </div>
           {app && (
-            <AppsTableList apps={[app]} />
+            <AppsTableList style={{ backgroundColor: appBackgroundColor }} apps={[app]} />
           )}
+        </div>
+        <div className="appstore-card-close-button card-opened-fade-in">
+          <a href="#" className="link card-close">
+            <i style={{ color: closeButtonColor }} className="f7-icons">multiply_circle_fill</i>
+          </a>
         </div>
         <div className="appstore-card-content card-content-padding">
           {children}

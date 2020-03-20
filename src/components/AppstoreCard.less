@@ -35,7 +35,7 @@
   --f7-card-expandable-max-width: none;
   --f7-card-expandable-tablet-height: 92vh;
   --f7-card-expandable-tablet-border-radius: 13px;
-  --card-offset: 40px;
+  --card-offset: calc(40px + var(--f7-safe-area-left) + var(--f7-safe-area-right));
 
   @media (max-width: 767px), (max-height: 669px) {
     margin-top: 0;
@@ -67,6 +67,12 @@
     .card-content {
       transition-duration: 450ms;
     }
+  }
+
+  &-close-button {
+    position: absolute;
+    top: calc(16px + var(--f7-safe-area-top));
+    right: calc(var(--f7-card-content-padding-horizontal) + var(--f7-safe-area-right));
   }
 
   &-header {
@@ -135,6 +141,10 @@
         padding: 0;
         margin: 0;
       }
+      &-title {
+        margin-right: 20px;
+        -webkit-line-clamp: 1;
+      }
       &-image {
         width: 48px;
         height: 48px;
@@ -151,7 +161,8 @@
   &.card-closing {
     .appstore-card-header .apps-table-list-button,
     .appstore-card-header > img,
-    .appstore-card-header-text {
+    .appstore-card-header-text,
+    .appstore-card-close-button {
       transition-duration: 400ms;
     }
   }
