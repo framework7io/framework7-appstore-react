@@ -9,6 +9,7 @@ import {
   Link,
 } from 'framework7-react';
 
+import PWA from '../js/pwa';
 import routes from '../js/routes';
 
 const AppComponent = () => {
@@ -28,9 +29,7 @@ const AppComponent = () => {
   };
   if (process.env.NODE_ENV === 'production') {
     // Register service worker in production mode only
-    // f7params.serviceWorker = {
-    //   path: '/service-worker.js',
-    // };
+    PWA.init();
   }
 
   function onTabLinkClick(tab) {

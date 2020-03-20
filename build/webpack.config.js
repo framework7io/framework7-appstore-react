@@ -204,6 +204,12 @@ module.exports = {
 
     new WorkboxPlugin.InjectManifest({
       swSrc: resolvePath('src/service-worker.js'),
+      exclude: [
+        // eslint-disable-next-line
+        /static\/apps-images\/[a-z\-]*[0-9]{1,}[a-z\.]*/,
+        /\.map/,
+        '.DS_Store',
+      ],
     }),
   ],
 };
