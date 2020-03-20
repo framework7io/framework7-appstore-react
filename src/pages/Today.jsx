@@ -98,7 +98,7 @@ const Today = () => {
           titleLarge
           closeButtonColor="#000"
           app={appInstagram}
-          appBackgroundColor="rgba(0,0,0,0.2)"
+          appColor="#000"
         >
           <p>Lorem ipsum, <b>dolor sit amet consectetur adipisicing</b> elit. Explicabo sapiente nisi accusantium earum quos culpa quam doloremque distinctio suscipit nobis corrupti eaque, debitis quasi quisquam rerum quas beatae dolorem eos?</p>
           <p>Magnam obcaecati fugit, ullam nostrum in dolore sed ab culpa ipsum architecto sunt distinctio necessitatibus et. Quam laborum delectus tenetur rem quae itaque ad numquam, eveniet, repudiandae quas eum unde?</p>

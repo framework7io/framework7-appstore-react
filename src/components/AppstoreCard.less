@@ -1,3 +1,12 @@
+.card-backdrop {
+  .device-desktop & {
+    backdrop-filter: none;
+    background-color: rgba(255, 255, 255, 0.55);
+  }
+  .device-desktop.theme-dark & {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+}
 .appstore-card-grid {
   @media (min-width: 768px) and (min-height: 670px) {
     --card-grid-gap: 30px;
@@ -37,6 +46,7 @@
   --f7-card-expandable-tablet-height: 92vh;
   --f7-card-expandable-tablet-border-radius: 13px;
   --card-offset: calc(40px + var(--f7-safe-area-left) + var(--f7-safe-area-right));
+  --card-width: calc(100% - var(--f7-safe-area-left) - var(--f7-safe-area-right) - 40px);
 
   @media (max-width: 767px), (max-height: 669px) {
     margin-top: 0;
@@ -57,7 +67,7 @@
   &.card-opening,
   &.card-closing,
   &.card-transitioning {
-    transition-duration: 400ms;
+    transition-duration: 300ms;
   }
   &.card-opening {
     .card-content {
@@ -66,7 +76,7 @@
   }
   &.card-closing {
     .card-content {
-      transition-duration: 450ms;
+      transition-duration: 400ms;
     }
   }
 
@@ -145,6 +155,12 @@
       &-title {
         margin-right: 20px;
         -webkit-line-clamp: 1;
+        color: inherit;
+      }
+      &-button span,
+      .item-text {
+        color: inherit;
+        opacity: 0.55;
       }
       &-image {
         width: 48px;
@@ -181,7 +197,7 @@
   &-title {
     font-size: 28px;
     font-weight: bold;
-    max-width: 80%;
+    max-width: calc(var(--card-width) * 0.8);
     line-height: 1.2;
   }
 
