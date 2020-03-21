@@ -1,102 +1,4 @@
-# App Store
-
-## Framework7 CLI Options
-
-Framework7 app created with following options:
-
-```
-{
-  "cwd": "/Users/vladimirkharlampidi/GitHub/framework7-react-appstore",
-  "type": [
-    "pwa"
-  ],
-  "name": "App Store",
-  "framework": "react",
-  "template": "tabs",
-  "bundler": "webpack",
-  "cssPreProcessor": "less",
-  "theming": {
-    "customColor": false,
-    "color": "#007aff",
-    "darkTheme": false,
-    "iconFonts": true,
-    "fillBars": false
-  },
-  "customBuild": true,
-  "customBuildConfig": {
-    "rtl": false,
-    "darkTheme": true,
-    "lightTheme": true,
-    "themes": [
-      "ios",
-      "md",
-      "aurora"
-    ],
-    "components": [
-      "appbar",
-      "dialog",
-      "popup",
-      "login-screen",
-      "popover",
-      "actions",
-      "sheet",
-      "toast",
-      "preloader",
-      "progressbar",
-      "sortable",
-      "swipeout",
-      "accordion",
-      "contacts-list",
-      "virtual-list",
-      "list-index",
-      "timeline",
-      "tabs",
-      "panel",
-      "card",
-      "chip",
-      "form",
-      "input",
-      "checkbox",
-      "radio",
-      "toggle",
-      "range",
-      "stepper",
-      "smart-select",
-      "grid",
-      "calendar",
-      "picker",
-      "infinite-scroll",
-      "pull-to-refresh",
-      "lazy",
-      "data-table",
-      "fab",
-      "searchbar",
-      "messages",
-      "messagebar",
-      "swiper",
-      "photo-browser",
-      "notification",
-      "autocomplete",
-      "tooltip",
-      "gauge",
-      "skeleton",
-      "menu",
-      "color-picker",
-      "treeview",
-      "text-editor",
-      "elevation",
-      "typography"
-    ]
-  },
-  "webpack": {
-    "developmentSourceMap": true,
-    "productionSourceMap": true,
-    "hashAssets": false,
-    "preserveAssetsPaths": false,
-    "inlineAssets": true
-  }
-}
-```
+# App Store UI
 
 ## NPM Scripts
 
@@ -114,6 +16,7 @@ Webpack has specific way of handling static assets (CSS files, images, audios). 
 ## PWA
 
 This is a PWA. Don't forget to check what is inside of your `service-worker.js`. It is also recommended that you disable service worker (or enable "Update on reload") in browser dev tools during development.
+
 ## Assets
 
 Assets (icons, splash screens) source images located in `assets-src` folder. To generate your own icons and splash screen images, you will need to replace all assets in this directory with your own images (pay attention to image size and format), and run the following command in the project directory:
@@ -131,9 +34,7 @@ framework7 generate-assets --ui
 ## Documentation & Resources
 
 * [Framework7 Core Documentation](https://framework7.io/docs/)
-
 * [Framework7 React Documentation](https://framework7.io/react/)
-
 * [Framework7 Icons Reference](https://framework7.io/icons/)
 * [Community Forum](https://forum.framework7.io)
 
