@@ -93,6 +93,7 @@ const AppDetails = ({ id, backText }) => {
             <div className="app-header-rating">
               <div className="app-header-rating-value">{app.rating}</div>
               <RatingStars rating={app.rating} />
+              <div className="app-header-rating-sub">930 Ratings</div>
             </div>
           </div>
         </div>

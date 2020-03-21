@@ -71,8 +71,10 @@
   }
   &-rating {
     display: flex;
+    flex-wrap: wrap;
     opacity: 0.55;
     align-items: center;
+    position: relative;
     &-value {
       font-size: 22px;
       font-weight: bold;
@@ -81,6 +83,21 @@
     .rating-stars .f7-icons {
       font-size: 18px;
     }
+    &-sub {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      font-size: 12px;
+      opacity: 0.75;
+      @media (min-width: 768px) {
+        position: static;
+        margin-left: 16px;
+        font-size: 14px;
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
   }
   @media (max-width: 767px) {
     margin-bottom: calc(var(--f7-block-margin-vertical) + 30px + 16px);
