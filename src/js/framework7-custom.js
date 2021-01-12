@@ -1,8 +1,8 @@
 
-import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.esm';
+import Framework7 from 'framework7/lite';
 // import Appbar from 'framework7/components/appbar/appbar';
 // import Dialog from 'framework7/components/dialog/dialog';
-import Popup from 'framework7/components/popup/popup';
+import Popup from 'framework7/components/popup/';
 // import LoginScreen from 'framework7/components/login-screen/login-screen';
 // import Popover from 'framework7/components/popover/popover';
 // import Actions from 'framework7/components/actions/actions';
@@ -17,9 +17,9 @@ import Popup from 'framework7/components/popup/popup';
 // import VirtualList from 'framework7/components/virtual-list/virtual-list';
 // import ListIndex from 'framework7/components/list-index/list-index';
 // import Timeline from 'framework7/components/timeline/timeline';
-import Tabs from 'framework7/components/tabs/tabs';
+import Tabs from 'framework7/components/tabs/';
 // import Panel from 'framework7/components/panel/panel';
-import Card from 'framework7/components/card/card';
+import Card from 'framework7/components/card/';
 // import Chip from 'framework7/components/chip/chip';
 // import Form from 'framework7/components/form/form';
 // import Input from 'framework7/components/input/input';
@@ -40,8 +40,8 @@ import Card from 'framework7/components/card/card';
 // import Searchbar from 'framework7/components/searchbar/searchbar';
 // import Messages from 'framework7/components/messages/messages';
 // import Messagebar from 'framework7/components/messagebar/messagebar';
-import Swiper from 'framework7/components/swiper/swiper';
-import PhotoBrowser from 'framework7/components/photo-browser/photo-browser';
+import Swiper from 'framework7/components/swiper/';
+import PhotoBrowser from 'framework7/components/photo-browser/';
 // import Notification from 'framework7/components/notification/notification';
 // import Autocomplete from 'framework7/components/autocomplete/autocomplete';
 // import Tooltip from 'framework7/components/tooltip/tooltip';
@@ -52,7 +52,7 @@ import PhotoBrowser from 'framework7/components/photo-browser/photo-browser';
 // import Treeview from 'framework7/components/treeview/treeview';
 // import TextEditor from 'framework7/components/text-editor/text-editor';
 // import Elevation from 'framework7/components/elevation/elevation';
-import Typography from 'framework7/components/typography/typography';
+import Typography from 'framework7/components/typography/';
 
 Framework7.use([
   // Appbar,
@@ -111,4 +111,3 @@ Framework7.use([
 ]);
 
 export default Framework7;
-export { Device, Request, Utils };

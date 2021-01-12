@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React, { useState, useEffect, useRef } from 'react';
 import $ from 'dom7';
 
 import {
+  f7,
   App,
   Views,
   View,
@@ -19,6 +21,14 @@ const AppComponent = () => {
   useEffect(() => {
     previousTab.current = activeTab;
   }, [activeTab]);
+
+  useEffect(() => {
+    // Fix viewport scale on mobiles
+    if ((f7.device.ios || f7.device.android) && f7.device.standalone) {
+      const viewPortContent = document.querySelector('meta[name="viewport"]').getAttribute('content');
+      document.querySelector('meta[name="viewport"]').setAttribute('content', `${viewPortContent}, maximum-scale=1, user-scalable=no`);
+    }
+  }, []);
 
   // Framework7 Parameters
   const f7params = {
@@ -39,7 +49,7 @@ const AppComponent = () => {
     }
   }
   return (
-    <App params={f7params}>
+    <App {...f7params}>
 
       <Views tabs className="safe-areas">
         <Toolbar tabbar labels bottom>
